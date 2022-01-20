@@ -2,3 +2,4 @@ text/*
 !text/.keep
 pics/mandos/*
 ._*.bmp
+pics/.*.bmp
