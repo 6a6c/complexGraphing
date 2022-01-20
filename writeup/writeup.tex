@@ -1,0 +1,33 @@
+\documentclass[a4paper,12pt]{article}
+
+\begin{document}
+\title{A Curious Case of Complex Codomain Coloring\thanks{Completely curtailing the less cumbersome "Domain coloring"}}
+\author{Jake Looney\\ Undergrad at the University of Tennessee Knoxville}
+\date{\today}
+\maketitle
+
+\pagenumbering{roman}
+\tableofcontents
+\newpage
+\pagenumbering{arabic}
+
+\section{Motivation}
+I ain't gonna lie, I was really high when I wrote the code for this and was trying to just make a domain coloring grapher.
+I had seen a coupel of pictures on Wikipedia using domain coloring and saw the term so I decided to just have a go at it.
+I was thinking that "domain coloring" would make sense to color the domain and then apply the function.
+Of course, normal domain coloring works the other way, where you apply the function then color based on where the points land.
+So, what resulted is the other direction of the usual way to do this: points are colored based on their preimage.
+This requires some working around in order to work with general functions.
+There's not many reasons to do this: it goes against the standard, its computationally intensive, slow as shit, blocky, imprecise, and only shows one point in the preimage per point in the image.
+However, despite this, I did discover something pretty interesting while shoving fun functions into it. But first, an explanation of the code.
+
+\section{Code explanation}
+There is an attached GitHub repository containing the code. You can view it here:
+There are three main functions that are used to create these graphs. The function \verb|createPicture| takes a map of pixel idices and complex points to output a bitmap image. It mainily utiliizes a bitmap implementation I stole from class, but importantly it colors ponits as follows:
+
+This can be changed in order to alter the colorscheme, but I have no idead what the hell LAB color is so I will have to come back to it.\\
+The function 
+
+
+
+\end{document}

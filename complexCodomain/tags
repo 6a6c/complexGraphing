@@ -1,0 +1,42 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/Volumes/Samsung_T5/jraph/complex/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	/52b2a79d/
+BITMAPFILEHEADER	include/createBitmap.hpp	/^struct BITMAPFILEHEADER{$/;"	s
+BITMAPINFOHEADER	include/createBitmap.hpp	/^struct BITMAPINFOHEADER{$/;"	s
+Pixel	include/createBitmap.hpp	/^struct Pixel {$/;"	s
+_CREATE_BITMAP_H	include/createBitmap.hpp	/^#define _CREATE_BITMAP_H$/;"	d
+bitcount	include/createBitmap.hpp	/^	uint16_t bitcount;	 	\/\/should be 24bit for 3channel rgb$/;"	m	struct:BITMAPINFOHEADER	typeref:typename:uint16_t
+blue	include/createBitmap.hpp	/^	uint8_t blue;$/;"	m	struct:Pixel	typeref:typename:uint8_t
+color_important	include/createBitmap.hpp	/^	uint32_t color_important; 	\/\/also zero$/;"	m	struct:BITMAPINFOHEADER	typeref:typename:uint32_t
+color_used	include/createBitmap.hpp	/^	uint32_t color_used;	 	\/\/color index used, but we arent using one so its 0$/;"	m	struct:BITMAPINFOHEADER	typeref:typename:uint32_t
+compression	include/createBitmap.hpp	/^	uint32_t compression;	 	\/\/set as 0 for no compression$/;"	m	struct:BITMAPINFOHEADER	typeref:typename:uint32_t
+createImage	src/arg_mag.cpp	/^unsigned char* createImage(int h, int w, map< complex<float> , complex<float> > function){$/;"	f	typeref:typename:unsigned char *
+createPicture	src/argMag.cpp	/^unsigned char* createPicture(int h, int w, map< int , complex<double> > &function, string fn){$/;"	f	typeref:typename:unsigned char *
+green	include/createBitmap.hpp	/^	uint8_t green;$/;"	m	struct:Pixel	typeref:typename:uint8_t
+height	include/createBitmap.hpp	/^	uint32_t height;		\/\/$/;"	m	struct:BITMAPINFOHEADER	typeref:typename:uint32_t
+imagesize	include/createBitmap.hpp	/^	uint32_t imagesize;		\/\/$/;"	m	struct:BITMAPINFOHEADER	typeref:typename:uint32_t
+main	src/argMag.cpp	/^int main(){$/;"	f	typeref:typename:int
+main	src/bmptester.cpp	/^int main(){$/;"	f	typeref:typename:int
+makeFunction	src/argMag.cpp	/^multimap< double, pair< complex<double>, complex<double> > > makeFunction(){$/;"	f	typeref:typename:multimap<double,pair<complex<double>,complex<double>>>
+makeMap	src/argMag.cpp	/^map< int , complex<double> > makeMap(int h, int w, double realLeft, double realRight,$/;"	f	typeref:typename:map<int,complex<double>>
+offset	include/createBitmap.hpp	/^	uint32_t offset; 		\/\/offset should be 14+40=54 bytes$/;"	m	struct:BITMAPFILEHEADER	typeref:typename:uint32_t
+planes	include/createBitmap.hpp	/^	uint16_t planes; 		\/\/one plane as defualt for test images$/;"	m	struct:BITMAPINFOHEADER	typeref:typename:uint16_t
+preImage	src/argMag.cpp	/^complex<double> preImage(complex<double> z, multimap< double , pair< complex<double>, complex<do/;"	f	typeref:typename:complex<double>
+red	include/createBitmap.hpp	/^	uint8_t red;$/;"	m	struct:Pixel	typeref:typename:uint8_t
+reserved1	include/createBitmap.hpp	/^	uint16_t reserved1;		\/\/$/;"	m	struct:BITMAPFILEHEADER	typeref:typename:uint16_t
+reserved2	include/createBitmap.hpp	/^	uint16_t reserved2;		\/\/$/;"	m	struct:BITMAPFILEHEADER	typeref:typename:uint16_t
+size	include/createBitmap.hpp	/^	uint32_t size; 			\/\/size of file, set at end$/;"	m	struct:BITMAPFILEHEADER	typeref:typename:uint32_t
+size	include/createBitmap.hpp	/^	uint32_t size; 			\/\/size of the info header i.e sizeof(BITMAPINFOHEADER) should be 40$/;"	m	struct:BITMAPINFOHEADER	typeref:typename:uint32_t
+type	include/createBitmap.hpp	/^	uint16_t type; 			\/\/type of file, should be BM for bitmap$/;"	m	struct:BITMAPFILEHEADER	typeref:typename:uint16_t
+width	include/createBitmap.hpp	/^	uint32_t width; 		\/\/$/;"	m	struct:BITMAPINFOHEADER	typeref:typename:uint32_t
+writeBitmap	include/createBitmap.hpp	/^void writeBitmap(int h, int w, Pixel* pixarray, std::string fn){$/;"	f	typeref:typename:void
+x_pixels_per_meter	include/createBitmap.hpp	/^	uint32_t x_pixels_per_meter;	\/\/$/;"	m	struct:BITMAPINFOHEADER	typeref:typename:uint32_t
+y_pixels_per_meter	include/createBitmap.hpp	/^	uint32_t y_pixels_per_meter;	\/\/$/;"	m	struct:BITMAPINFOHEADER	typeref:typename:uint32_t
