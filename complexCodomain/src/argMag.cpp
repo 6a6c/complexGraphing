@@ -30,8 +30,6 @@ unsigned char* createPicture(int h, int w, map< int , complex<double> > *functio
 		mag = abs(z);
 		ar = arg(z);
 
-		//cout << fit->first << " " << fit->second << endl;
-
 		pixarray[fit->first].red = min(5*mag, 255.0);
 		pixarray[fit->first].blue = min(40*ar, 255.0);
 		pixarray[fit->first].green = min(100*mag, 255.0);
@@ -71,6 +69,7 @@ multimap< double, pair< complex<double>, complex<double> > > *makeFunction(){
 			//output = ((z * z * z) + complex<double>(-1, 0));
 			//output = z;
 			//cout << i << "      " << j << "      " << z << "      " << output << "      " << norm(output) << "                 \r";
+
 			function->insert(make_pair(abs(output), make_pair(output, z)));
 
 		}
@@ -85,7 +84,7 @@ multimap< double, pair< complex<double>, complex<double> > > *makeFunction(){
 // returns the closest to a  preimage point for a given z in the image
 complex<double> preImage(complex<double> z, multimap< double , pair< complex<double>, complex<double> > > *func){
 	double mag = abs(z);
-	double d1, d2, best;
+	double d1, best;
 	map< double, pair< complex<double>, complex<double> > >::const_iterator low, high, fit, bit;
 	size_t i = 0;
 
