@@ -2,12 +2,15 @@
 
 \usepackage{listings}
 \usepackage{hyperref}
+\usepackage{graphicx}
 
 \lstdefinestyle{code}{
 	basicstyle=\ttfamily\small
 }
 
 \lstset{style=code}
+
+\graphicspath{ {./figures/} }
 
 \begin{document}
 \title{A Curious Case of Complex Codomain Coloring}
@@ -22,7 +25,7 @@
 
 \section{Motivation}
 I ain't gonna lie, I was really high when I wrote the code for this and was trying to just make a domain coloring grapher.
-I had seen a coupel of pictures on Wikipedia using domain coloring and saw the term so I decided to just have a go at it.
+I had seen a couple of pictures on Wikipedia using domain coloring and saw the term so I decided to just have a go at it.
 I was thinking that "domain coloring" would make sense to color the domain and then apply the function.
 Of course, normal domain coloring works the other way, where you apply the function then color based on where the points land.
 So, what resulted is the other direction of the usual way to do this: points are colored based on their preimage.
@@ -124,5 +127,19 @@ return bit->second.second;
 \end{lstlisting}
 
 The result, after calling \verb|preImage| on all the points for the picture, is a preimage point for each point in the codomain. \\ \\
+
+\section{That's cool, but what do the pictures look like?}
+
+For reference, it's important to see what the unaltered complex plane (that is to say, the domain) looks like:
+
+\begin{figure}[h]
+	\includegraphics[width=8cm]{f(z)=z}
+	\centering
+	\caption{f(z) = z}
+	\centering
+\end{figure}
+
+This image was obtained by using f(z) = z as the function through the codomain grapher.
+This can be thought of as the domain for other functions, the complex plane before a function is applied to it.
 
 \end{document}

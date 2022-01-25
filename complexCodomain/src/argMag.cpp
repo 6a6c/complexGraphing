@@ -1,3 +1,5 @@
+// Compile this file with: g++ -o bin/test src/argMag.cpp -Iinclude
+
 #include <cmath>
 #include <complex>
 #include <map>
