@@ -3,6 +3,8 @@
 \usepackage{listings}
 \usepackage{hyperref}
 \usepackage{graphicx}
+\usepackage{ulem}
+\usepackage{geometry}
 
 \lstdefinestyle{code}{
 	basicstyle=\ttfamily\small
@@ -12,8 +14,16 @@
 
 \graphicspath{ {./figures/} }
 
+\geometry{
+	letterpaper,
+	top=2.54cm,
+	bottom=2.54cm,
+	left=2.54cm,
+	right=2.54cm
+}
+
 \begin{document}
-\title{A Curious Case of Complex Codomain Coloring}
+\title{\sout{Curious Case of Complex Codomain Coloring}\\ getting high and finding primes}
 \author{Jake Looney\\ Undergrad at the University of Tennessee Knoxville}
 \date{January 2022}
 \maketitle
@@ -64,7 +74,7 @@ for( i = -1 * pts; i < pts; i++){
     if(abs(output) > 2) output = complex<double>(INFINITY, 0);
 
     //output = sin(z);
-    //output = (((z * z) + complex<double>(-1,0)) 
+    //output = (((z * z) + complex<double>(-1,0))
     //		* pow((z + complex<double>(-2, -1)), 2))
     //           /(z*z + complex<double>(2,2));
     //output = ((z * z * z) + complex<double>(-1, 0));
@@ -130,16 +140,97 @@ The result, after calling \verb|preImage| on all the points for the picture, is 
 
 \section{That's cool, but what do the pictures look like?}
 
-For reference, it's important to see what the unaltered complex plane (that is to say, the domain) looks like:
+For reference, it's important to see what the unaltered complex plane looks like:
 
 \begin{figure}[h]
 	\includegraphics[width=8cm]{f(z)=z}
 	\centering
-	\caption{f(z) = z}
+	\caption{\small$f(z) = z$}
 	\centering
 \end{figure}
 
-This image was obtained by using f(z) = z as the function through the codomain grapher.
-This can be thought of as the domain for other functions, the complex plane before a function is applied to it.
+This image was obtained by using $f(z) = z$ as the function through the codomain grapher.
+The real and imaginary axes runs directly through the middle.
+Because all points in the domain this function equal their outputs in the codomain, this graph can be used as the domain for other functions.
+\\
+Also, notice here some of the limitations in this method in the artifacts the graph produces.
+Near the positive real axis, there are some instances of the green "jumping up" into the first quadrant.
+<Find out why this is and describe it>
+\\
+Here's another example of the codomain grapher:
+
+\begin{figure}[h]
+	\includegraphics[width=6cm]{f(z)=z}
+	\includegraphics[width=6cm]{f(z)=z^3-1}
+	\centering
+	\caption[\small]{The complex plane before and after applying $f(z) = z^3 - 1$}
+	\centering
+\end{figure}
+
+This is the function $f(z) = z^3 - 1$. Compare this function with it's corresponding domain graph:
+
+\begin{figure}[h]
+	\includegraphics[width=6cm]{f(z)=z^3-1}
+	\includegraphics[width=6cm]{f(z)=z^3-1_D}
+	\centering
+	\caption[basicstyle=\small]{The codomain graph(left) and domain graph(right) of $f(z) = z^3 - 1$}
+\end{figure}
+
+Both graphs show the same interval on the complex plane, but one shows where points in that interval go and one shows some points that end up in that interval.
+This highlights the biggest practical restriction with this method of graphing: points in the codomain only display one preimage point despite potentially having more preimage points.
+For intance, we can clearly see from the domain graph that this function has 3 roots.
+However, as each point can only be colored once, 0 only shows the value of the root $z= \frac{-1 + i\sqrt{3}}{2} = -0.5000 + 0.8660i$, omitting the other two roots. \\
+
+I hope these examples illustrate how to interpret these graphs.
+After trying with a normal functions, the obvious next step was:
+
+\section{Jamming the Mandlebrot function in this}
+
+To graph the Mandlebrot with the codomain grapher, one only needs to use points with a magnitude to less than two to genereate the function.
+Anypoints with a magnitude of greater than two will diverge to infinity and will not be apart of the set$^{[citation needed]}$.
+So, to genereate the collection of Mandlebrot graphs, I set pts to 2000 and the aCoeff to $10^{-8}$ (which is actually one order of magnitude higher than it should've been and I literally didn't notice until right now while I writing this there is a lot of points that are completely useuless because they just diverge away because of fucking course they do what was I thinking god bless i should re run the entire program and maybe also write it in a way that shortens running time god bless)
+
+In addition to this, most image generated are on the interval $ -0.5 \leq Re(z), Im(z) \leq 0.5$.
+This is because this is the pretty and interesting part and everything else is just kinda circles.
+
+Let's take a look at the first one of these I tried, using 500 iterations before bailing out of the Mandlebrot function:
+
+\begin{figure}[h]
+	\noindent\makebox[\textwidth]{%
+		\includegraphics[width=8cm]{500iter}}
+	\centering
+	\caption{500 iterations}
+	\centering
+\end{figure}
+
+Wowie ain't that cool! Lets do that again but this time, we'll edit the interval and image size so that it makes a good desktop wallpaper:
+\pagebreak
+\begin{figure}[h]
+	\noindent\makebox[\textwidth]{%
+		\includegraphics[width=14cm]{mandoback}}
+	\centering
+	\caption{A bitching wallpaper, send it to your colleagues!}
+	\centering
+\end{figure}
+
+Wow that's nice. I was really suprised at the detail that shows up.
+I almost walked away from it but then I remebered that points in iterative functions iterate. So I tried changing the number of iterations:
+
+\begin{figure}[h]
+	\noindent\makebox[\textwidth]{%
+	\includegraphics[width=5.5cm]{501iter}
+	\includegraphics[width=5.5cm]{502iter}
+	\includegraphics[width=5.5cm]{503iter}}
+	\centering
+	\caption{LtR: 501 iterations, 502 iterations, and 503 iterations}
+\end{figure}
+
+Oh wow that's cool. 501 has some detail but is nothing like 500. 502 looks exactly like 500 but with an extra little thingy on the right of it.
+503 has basically no detail though. Wait a second...
+
+\section{Ding dong, get the door, its the motherfucking prime numbers!}
+
+Yoooooooooo!!!!!!!
+
 
 \end{document}
