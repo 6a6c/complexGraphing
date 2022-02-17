@@ -5,6 +5,7 @@
 \usepackage{graphicx}
 \usepackage{ulem}
 \usepackage{geometry}
+\usepackage{amssymb}
 
 \lstdefinestyle{code}{
 	basicstyle=\ttfamily\small
@@ -23,9 +24,9 @@
 }
 
 \begin{document}
-\title{\sout{Curious Case of Complex Codomain Coloring}\\ getting high and finding primes}
+\title{Complex Codomain Coloring, the Mandlebrot Set, and Primes}
 \author{Jake Looney\\ Undergrad at the University of Tennessee Knoxville}
-\date{January 2022}
+\date{January - March, 2022}
 \maketitle
 
 \pagenumbering{roman}
@@ -34,20 +35,25 @@
 \pagenumbering{arabic}
 
 \section{Motivation}
-I ain't gonna lie, I was really high when I wrote the code for this and was trying to just make a domain coloring grapher.
-I had seen a couple of pictures on Wikipedia using domain coloring and saw the term so I decided to just have a go at it.
-I was thinking that "domain coloring" would make sense to color the domain and then apply the function.
-Of course, normal domain coloring works the other way, where you apply the function then color based on where the points land.
-So, what resulted is the other direction of the usual way to do this: points are colored based on their preimage.
-This requires some working around in order to work with general functions.
-There's not many reasons to do this: it goes against the standard, its computationally intensive, slow as shit, blocky, imprecise, and only shows one point in the preimage per point in the image.
+Let $f:\mathbb{C}\rightarrow\mathbb{C}$ be a function from the complex plane to itself.
+The standard, practical way to visually represent $f$ is with \textit{domain coloring}, whereby you take a region
+on the complex plane, apply the function to a grid a points within that region, and color each pixel based on the output of those points.
+This, in effect, shows you where "each point goes" after applying the function. However, what if you want to see
+where "each point is from"? To do that, we use \textit{codomain coloring}, which is the concern of this paper.
+Codomain coloring works by taking a large set of points, applying the function to each point,
+and then storing each output point with its corresponding input point. Then, you select a region on the plane,
+divide that region into a grid, and color each pixel based on the \textit{input point} of the nearest \textit{output point}.
+In metaphor, it is like giving each point a name, having those points move around the plane, and then coloring pixels based off
+the name of the closest point.
+There's not many reasons to do this: it goes against the standard, its computationally intensive, slow as all get out, blocky, imprecise, and only shows one point for each pixel.
 However, despite this, I did discover something pretty interesting while shoving fun functions into it. But first, an explanation of the code.
 
 \section{Code explanation}
 There is an attached GitHub repository containing the code. You can view it here: \url{https://github.com/6a6c/jraph} \\
 
 The function \verb|createPicture| takes a map of pixel indices and complex points to output a bitmap image.
-It mainily utiliizes a bitmap implementation I stole from class, but importantly it colors points in the image based on their argument and magnitude:
+It mainily utiliizes a bitmap implementation I stole from one of my classes,
+but importantly it colors points in the image based on their argument and magnitude:
 \begin{lstlisting}[language=c++]
     z = fit->second;
     mag = abs(z);
@@ -57,7 +63,7 @@ It mainily utiliizes a bitmap implementation I stole from class, but importantly
     pixarray[fit->first].blue = min(40*ar, 255.0);
     pixarray[fit->first].green = min(100*mag, 255.0);
 \end{lstlisting}
-This can be changed in order to alter the colorscheme, but I have no idea what the hell LAB color is so I will have to come back to it.\\
+This can be changed in order to alter the colorscheme.\\
 
 There are three main functions that are used to create these graphs. The function \verb|makeFunction| creaates a multimap of doubles corresponding to output magnitudes and a pair of complex points corresponding to input and output points of a function. To do this, it applies a function to a region of complex points and adds them to the multimap:
 \begin{lstlisting}[language=c++]
@@ -65,31 +71,20 @@ for( i = -1 * pts; i < pts; i++){
   for( j = -1 * pts; j < pts; j++){
 
     z = complex<double>(aCoeff * i * i * i, aCoeff * j * j * j);
-    output = complex<double>(0,0);
-    k=0;
-    while(k < mandoIters && abs(output) < 2){
-      output = pow(output, 2) + z;
-      k++;
-    }
-    if(abs(output) > 2) output = complex<double>(INFINITY, 0);
 
-    //output = sin(z);
-    //output = (((z * z) + complex<double>(-1,0))
-    //		* pow((z + complex<double>(-2, -1)), 2))
-    //           /(z*z + complex<double>(2,2));
-    //output = ((z * z * z) + complex<double>(-1, 0));
-    //output = z;
+    output = func(z);
+
+    // if(abs(output) > 2) continue;
 
     function->insert(make_pair(abs(output), make_pair(output, z)));
-
   }
 }
 \end{lstlisting}
 The points selected to be input points for the function are scaled based on a cubic function.
 This means that there are more points around 0 (the interesting parts) and less points further out.
 The coefficient on the cubic as well as the number of points can be changed.
-Currently, the function being applied in this code is the Mandlebrot function, with the ability to change the number of iterations (see section 4).
-However, other example functions are commented out, and the comments can be changed to change the function applied. \\
+The output is set to the \verb|func| function, which can be altered to change the function. Note, the commented out line, which
+will ignore points that diverge to infinity when calculating the Mandlebrot function. This will help keep the map small and runtime down. \\
 
 The function \verb|makeMap| is used to create the maps that are passed to \verb|createPicture|.
 To do this, it is passed a multimap created by \verb|makeFunction| as well as the boundaries of a region on the complex plane.
@@ -155,7 +150,7 @@ Because all points in the domain this function equal their outputs in the codoma
 \\
 Also, notice here some of the limitations in this method in the artifacts the graph produces.
 Near the positive real axis, there are some instances of the green "jumping up" into the first quadrant.
-<Find out why this is and describe it>
+\todo{Find out why this is and describe it}
 \\
 Here's another example of the codomain grapher:
 
@@ -188,9 +183,9 @@ After trying with a normal functions, the obvious next step was:
 
 To graph the Mandlebrot with the codomain grapher, one only needs to use points with a magnitude to less than two to genereate the function.
 Anypoints with a magnitude of greater than two will diverge to infinity and will not be apart of the set$^{[citation needed]}$.
-So, to genereate the collection of Mandlebrot graphs, I set pts to 2000 and the aCoeff to $10^{-8}$ (which is actually one order of magnitude higher than it should've been and I literally didn't notice until right now while I writing this there is a lot of points that are completely useuless because they just diverge away because of fucking course they do what was I thinking god bless i should re run the entire program and maybe also write it in a way that shortens running time god bless)
+So, to genereate the collection of Mandlebrot graphs, I set pts to 2000 and the aCoeff to $10^{-9}$
 
-In addition to this, most image generated are on the interval $ -0.5 \leq Re(z), Im(z) \leq 0.5$.
+In addition to this, most images shown are on the inteveral $ -0.5 \leq Re(z), Im(z) \leq 0.5$.
 This is because this is the pretty and interesting part and everything else is just kinda circles.
 
 Let's take a look at the first one of these I tried, using 500 iterations before bailing out of the Mandlebrot function:
@@ -230,7 +225,10 @@ Oh wow that's cool. 501 has some detail but is nothing like 500. 502 looks exact
 
 \section{Ding dong, get the door, its the motherfucking prime numbers!}
 
-Yoooooooooo!!!!!!!
+Yoooooooooo!!!!!!\\
+Alright, so. For any numbers, less than 50 (and really up until 100), there's too much noise for the patterns to shine.
+Primes under 50 in particular are less distinct from composite numbers because some of the numbers "haven't gotten out of the way yet".
+However, over 50, primes iterations are distinguishable by their lack of detail, where detail is defined here to be "how pretty and interesting the picture looks".
 
 
 \end{document}

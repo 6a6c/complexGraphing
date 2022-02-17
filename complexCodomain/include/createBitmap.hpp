@@ -43,24 +43,27 @@ void writeBitmap(int h, int w, Pixel* pixarray, std::string fn){
 	BITMAPINFOHEADER bih;
 	size_t i, bytes;
 
+	unsigned int padding = (4 - (w * sizeof(Pixel)) % 4) % 4;
+	if(padding > 3 || padding < 0){
+		printf("Bitmap Padding calculated incorecctly, calculated as %d, should be 0, 1, 2, or 3\n", padding);
+		return;
+	}
+
+
 	bfh.type = 19778;
-	bfh.size = 54 + (h * w);
+	bfh.size = 54 + (h * w) + (padding * h);
 	bfh.reserved1 = 0;
 	bfh.reserved2 = 0;
 	bfh.offset = 54;
-
 	bih.size = 40;
 	bih.width = w;
 	bih.height = h;
 	bih.planes = 1;
 	bih.bitcount = 24;
 	bih.compression = 0;
+	bih.imagesize = 0;
+	bih.color_important = 0;
 
-	unsigned int padding = (4 - (w * sizeof(Pixel)) % 4) % 4;
-	if(padding > 3 || padding < 0){
-		printf("Bitmap Padding calculated incorecctly, calculated as %d, should be 0, 1, 2, or 3\n", padding);
-		return;
-	}
 
 	FILE* fout;
 	fout = fopen(fn.c_str(), "wb");
