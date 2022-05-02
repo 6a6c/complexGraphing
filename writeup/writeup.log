@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.11.8)  17 FEB 2022 17:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.11.8)  2 MAY 2022 16:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -393,111 +393,111 @@ Underfull \hbox (badness 10000) in paragraph at lines 66--67
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 68--70
+
+ []
+
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 70.
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 71.
 [1]
-Underfull \hbox (badness 10000) in paragraph at lines 83--88
+Underfull \hbox (badness 10000) in paragraph at lines 84--89
 
  []
 
 
-Overfull \hbox (6.24101pt too wide) in paragraph at lines 94--95
+Overfull \hbox (6.24101pt too wide) in paragraph at lines 95--96
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (6.24101pt too wide) in paragraph at lines 95--97
+Overfull \hbox (6.24101pt too wide) in paragraph at lines 96--98
 [][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 134--135
+Underfull \hbox (badness 10000) in paragraph at lines 135--136
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 134--135
+Underfull \hbox (badness 10000) in paragraph at lines 135--136
 
  []
 
-<./figures//f(z)=z.png, id=78, 1003.75pt x 1003.75pt>
+<./figures//f(z)=z.png, id=105, 1003.75pt x 1003.75pt>
 File: ./figures//f(z)=z.png Graphic file (type png)
 <use ./figures//f(z)=z.png>
-Package pdftex.def Info: ./figures//f(z)=z.png  used on input line 141.
+Package pdftex.def Info: ./figures//f(z)=z.png  used on input line 142.
 (pdftex.def)             Requested size: 227.62204pt x 227.61066pt.
 File: ./figures//f(z)=z.png Graphic file (type png)
 <use ./figures//f(z)=z.png>
 Package pdftex.def Info: ./figures//f(z)=z.png  used on input line 158.
 (pdftex.def)             Requested size: 170.71652pt x 170.71182pt.
-<./figures//f(z)=z^3-1.png, id=80, 1003.75pt x 1003.75pt>
+<./figures//f(z)=z^3-1.png, id=107, 1003.75pt x 1003.75pt>
 File: ./figures//f(z)=z^3-1.png Graphic file (type png)
 <use ./figures//f(z)=z^3-1.png>
 Package pdftex.def Info: ./figures//f(z)=z^3-1.png  used on input line 159.
 (pdftex.def)             Requested size: 170.71652pt x 170.71182pt.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
 [3 <./figures//f(z)=z.png>]
 File: ./figures//f(z)=z^3-1.png Graphic file (type png)
 <use ./figures//f(z)=z^3-1.png>
-Package pdftex.def Info: ./figures//f(z)=z^3-1.png  used on input line 168.
+Package pdftex.def Info: ./figures//f(z)=z^3-1.png  used on input line 169.
 (pdftex.def)             Requested size: 170.71652pt x 170.71182pt.
-<./figures//f(z)=z^3-1_D.png, id=99, 1003.75pt x 1003.75pt>
+<./figures//f(z)=z^3-1_D.png, id=126, 1003.75pt x 1003.75pt>
 File: ./figures//f(z)=z^3-1_D.png Graphic file (type png)
 <use ./figures//f(z)=z^3-1_D.png>
-Package pdftex.def Info: ./figures//f(z)=z^3-1_D.png  used on input line 169.
+Package pdftex.def Info: ./figures//f(z)=z^3-1_D.png  used on input line 170.
 (pdftex.def)             Requested size: 170.71652pt x 170.71182pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 174--178
+Underfull \hbox (badness 10000) in paragraph at lines 175--182
 
  []
 
 [4 <./figures//f(z)=z^3-1.png> <./figures//f(z)=z^3-1_D.png>]
-<./figures//500iter.png, id=111, 1003.75pt x 1003.75pt>
+<./figures//500iter.png, id=138, 1003.75pt x 1003.75pt>
 File: ./figures//500iter.png Graphic file (type png)
 <use ./figures//500iter.png>
-Package pdftex.def Info: ./figures//500iter.png  used on input line 195.
-(pdftex.def)             Requested size: 227.62204pt x 227.61066pt.
-<./figures//mandoback.png, id=112, 2569.6pt x 1606.0pt>
-File: ./figures//mandoback.png Graphic file (type png)
-<use ./figures//mandoback.png>
-Package pdftex.def Info: ./figures//mandoback.png  used on input line 205.
-(pdftex.def)             Requested size: 398.33858pt x 248.95193pt.
- [5 <./figures//500iter.png>]
-<./figures//501iter.png, id=120, 1003.75pt x 1003.75pt>
+Package pdftex.def Info: ./figures//500iter.png  used on input line 199.
+(pdftex.def)             Requested size: 256.0748pt x 256.06773pt.
+<./figures//501iter.png, id=139, 1003.75pt x 1003.75pt>
 File: ./figures//501iter.png Graphic file (type png)
 <use ./figures//501iter.png>
-Package pdftex.def Info: ./figures//501iter.png  used on input line 218.
+Package pdftex.def Info: ./figures//501iter.png  used on input line 216.
 (pdftex.def)             Requested size: 156.49014pt x 156.48328pt.
-<./figures//502iter.png, id=121, 1003.75pt x 1003.75pt>
+<./figures//502iter.png, id=140, 1003.75pt x 1003.75pt>
 File: ./figures//502iter.png Graphic file (type png)
 <use ./figures//502iter.png>
-Package pdftex.def Info: ./figures//502iter.png  used on input line 218.
+Package pdftex.def Info: ./figures//502iter.png  used on input line 216.
 (pdftex.def)             Requested size: 156.49014pt x 156.48328pt.
-<./figures//503iter.png, id=122, 1003.75pt x 1003.75pt>
+<./figures//503iter.png, id=141, 1003.75pt x 1003.75pt>
 File: ./figures//503iter.png Graphic file (type png)
 <use ./figures//503iter.png>
-Package pdftex.def Info: ./figures//503iter.png  used on input line 218.
+Package pdftex.def Info: ./figures//503iter.png  used on input line 216.
 (pdftex.def)             Requested size: 156.49014pt x 156.48328pt.
- [6 <./figures//mandoback.png> <./figures//501iter.png> <./figures//502iter.png
-> <./figures//503iter.png>] [7] (./writeup.aux)
+ [5 <./figures//500iter.png>]
+<./figures//ncycles.png, id=149, 3847.6548pt x 3460.2876pt>
+File: ./figures//ncycles.png Graphic file (type png)
+<use ./figures//ncycles.png>
+Package pdftex.def Info: ./figures//ncycles.png  used on input line 248.
+(pdftex.def)             Requested size: 156.49014pt x 140.71112pt.
 
-Package rerunfilecheck Warning: File `writeup.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
 
-Package rerunfilecheck Info: Checksums for `writeup.out':
-(rerunfilecheck)             Before: D41D8CD98F00B204E9800998ECF8427E;0
-(rerunfilecheck)             After:  C3FCF0C0A39EC3FCB8C3D3B2C514F5E6;1154.
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[6 <./figures//501iter.png> <./figures//502iter.png> <./figures//503iter.png>]
+[7 <./figures//ncycles.png>] (./writeup.aux)
+Package rerunfilecheck Info: File `writeup.out' has not changed.
+(rerunfilecheck)             Checksum: 780BC8BCA75DCAD7E3247C8B3A9F2511;1070.
  ) 
 Here is how much of TeX's memory you used:
- 10783 strings out of 480445
- 155562 string characters out of 5892391
- 670486 words of memory out of 5000000
- 27852 multiletter control sequences out of 15000+600000
- 414085 words of font info for 70 fonts, out of 8000000 for 9000
+ 10795 strings out of 480445
+ 155658 string characters out of 5892391
+ 670469 words of memory out of 5000000
+ 27860 multiletter control sequences out of 15000+600000
+ 414392 words of font info for 71 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 71i,7n,74p,389b,1852s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 71i,7n,74p,389b,1850s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx1
 2.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/c
 mitt10.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts
@@ -514,10 +514,10 @@ t/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2021basic/texmf
 -dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2021basic/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2021bas
 ic/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on writeup.pdf (8 pages, 4178335 bytes).
+Output written on writeup.pdf (8 pages, 3315243 bytes).
 PDF statistics:
- 206 PDF objects out of 1000 (max. 8388607)
- 163 compressed objects within 2 object streams
- 76 named destinations out of 1000 (max. 500000)
- 41 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 236 PDF objects out of 1000 (max. 8388607)
+ 194 compressed objects within 2 object streams
+ 80 named destinations out of 1000 (max. 500000)
+ 89 words of extra memory for PDF output out of 10000 (max. 10000000)
 
